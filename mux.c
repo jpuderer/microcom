@@ -116,7 +116,7 @@ static int do_com_port_option(struct ios_ops *ios, unsigned char *buf, int len)
 		if (buf[i] == IAC) {
 			if (i + 1 < len && buf[i+1] == IAC) {
 				/* quoted IAC -> unquote */
-				++i;
+				;
 			} else if (i + 1 < len && buf[i+1] == SE) {
 				dbg_printf("IAC SE\n");
 				return i + 2;
